@@ -25,8 +25,8 @@ public class CombinationSum3CH {
 	}
 
 	private void dfs(List<List<Integer>> res, List<Integer> list, int k, int n, int begin) {
-		if (list.size() == k) {
-			if (n == 0) {
+		if (list.size() == k) { // 个数符合要求
+			if (n == 0) { // 符合要求，添加一组
 				res.add(new ArrayList<Integer>(list));
 			}
 			return;
