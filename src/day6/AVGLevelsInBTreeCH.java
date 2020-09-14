@@ -51,7 +51,7 @@ public class AVGLevelsInBTreeCH {
 		if (root == null) {
 			return res;
 		}
-		sum.add(1.0*root.val);
+		sum.add(1.0 * root.val);
 		count.add(1);
 		dfs(sum, count, root, 0);
 		for (int i = 0; i < sum.size(); i++) {
@@ -77,11 +77,11 @@ public class AVGLevelsInBTreeCH {
 			sum.set(level, sum.get(level) + root.val);
 			count.set(level, count.get(level) + 1);
 		} else {
-			sum.add(1.0*root.val);
+			sum.add(1.0 * root.val);
 			count.add(1);
 		}
-		dfs(sum, count, root.left, level+1);
-		dfs(sum, count, root.right, level+1);
+		dfs(sum, count, root.left, level + 1);
+		dfs(sum, count, root.right, level + 1);
 
 	}
 
@@ -96,7 +96,17 @@ public class AVGLevelsInBTreeCH {
 
 		public TreeNode getTestData() {
 			/**
-			 * 测试数据 5 / \ 8 6 / \ \ 3 3 6
+			 * 测试数据
+			 * 
+			 * ************ 5
+			 * 
+			 * ********** / ** \
+			 * 
+			 * ******** 8 ****** 6
+			 * 
+			 * ****** / ** \ ***** \
+			 * 
+			 * *****3 ****** 3 ***** 6
 			 */
 			TreeNode root = new TreeNode(5);
 			TreeNode[] nodes = new TreeNode[5];
