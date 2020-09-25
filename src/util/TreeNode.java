@@ -9,6 +9,12 @@ public class TreeNode {
 		this.val = val;
 	}
 
+	/**
+	 * 中序遍历
+	 * @author Rondo
+	 * @date 2020年9月25日 上午7:19:14
+	 * @param root
+	 */
 	public void inorderPrint(TreeNode root) {
 		if (root == null) {
 			return;
@@ -16,6 +22,35 @@ public class TreeNode {
 		inorderPrint(root.left);
 		System.out.print(root.val + " ");
 		inorderPrint(root.right);
+	}
+	
+	/**
+	 * 先序遍历
+	 * @author Rondo
+	 * @date 2020年9月25日 上午7:19:24
+	 * @param root
+	 */
+	public void preorderPrint(TreeNode root) {
+		if (root == null) {
+			return;
+		}
+		System.out.print(root.val + " ");
+		inorderPrint(root.left);
+		inorderPrint(root.right);
+	}
+	/**
+	 * 后序遍历
+	 * @author Rondo
+	 * @date 2020年9月25日 上午7:19:37
+	 * @param root
+	 */
+	public void postorderPrint(TreeNode root) {
+		if (root == null) {
+			return;
+		}
+		inorderPrint(root.left);
+		inorderPrint(root.right);
+		System.out.print(root.val + " ");
 	}
 
 	public TreeNode getTestData() {
