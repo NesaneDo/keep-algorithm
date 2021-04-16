@@ -45,3 +45,25 @@ myStack.empty(); // 返回 False
 > 来源：力扣（LeetCode）
 > 链接：https://leetcode-cn.com/problems/implement-stack-using-queues
 > 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+
+> **思路：**
+1. 入队时，把元素 入队 到 temp 中，然后把 data 中数据依次 出队 到 temp 中
+2. 步骤 1 完成后，互换 data 和 temp
+3. 出队时，出队 data 中的元素
+
+比如入队 [1, 2, 3]，队列方向 <- 从右至左
+(1) 把 1 入队到 temp 中，此时 data 中没有数据，就不用出队到 temp 中了，然后交换 data 和 temp
+data:[]				data:[1]
+             ->
+temp:[1]			temp:[]
+			
+(2)	把 2 入队到 temp 中，将 data 中的数据依次出队到 temp 中，然后交换 data 和 temp		
+data:[1]				   data:[]				   data:[2,1]
+              ->                              ->
+temp:[2]				temp:[2,1]			  temp:[]
+	
+(3)	把 3 入队到 temp 中，将 data 中的数据依次出队到 temp 中，然后交换 data 和 temp		
+data:[2,1]				data:[]				   data:[3,2,1]
+              ->                              ->
+temp:[3]				temp:[3,2,1]		  temp:[]
