@@ -19,19 +19,22 @@ nums1 是 nums2 的子集，即 nums2 中所有元素来自于 nums2，且是没
 
 ```java
 public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-        int[] res = new int[nums1.length];
-        for (int i = 0; i < nums1.length; i++) {
-            res[i] = -1;
-            int n2 = nums2.length - 1;
-            for (int j = 0; j < nums2.length; j++) {
-                if (nums2[j] == nums1[i]) {
-                    n2 = j;
-                }
-                if (nums2[j] > nums1[i] && j > n2) {
-                    res[i] = nums2[j];
-                    break;
-                }
+        int len1 = nums1.length;
+        int len2 = nums2.length;
+        Deque<Integer> stack = new LinkedList<>();
+        HashMap<Integer, Integer> map = new HashMap<>(len2);
+        // 对 nums2 遍历，找到每个元素的下一个更大值
+        for (int n : nums2) {
+            // 保证 Stack 中自顶向下单调不减，并且在出栈时 hashmap 记录关系：key：弹出的 value:压入的
+            while (!stack.isEmpty() && n > stack.peek()) {
+                map.put(stack.pop(), n);
             }
+            stack.push(n);
+        }
+        int[] res = new int[len1];
+        // 对 nums1 遍历，根据 hashmap 查找
+        for (int i = 0; i < len1; i++) {
+            res[i] = map.getOrDefault(nums1[i], -1);
         }
         return res;
     }
