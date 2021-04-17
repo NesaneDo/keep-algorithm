@@ -47,3 +47,14 @@ myQueue.empty(); // return false
 > 来源：力扣（LeetCode）
 > 链接：https://leetcode-cn.com/problems/implement-stack-using-queues
 > 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+
+
+> 思路
+
+和 [225. 用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/) 类似，只不过 [225. 用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/) 是在 **push** 时做逻辑，本题则是在**push** 和 **pop** 时都需要
+
+1. 定义两个栈 data 和 temp
+2. push() 操作时先把 data 中的元素依次出栈到 temp 中，再将指定元素压入 temp 中
+3. pop() 操作时，用 data 翻转 temp 的数据，即把 temp 中所有元素依次出栈到 data，然后执行 data 出栈操作 data.pop()
+4. peek() 操作时，需要将 temp 中的数据依次出栈到 data 中，因为每次是 push 到 temp 中的，有可能执行 push() 操作后直接 peek()，但此时最后 push() 进的数据还在 temp 中
