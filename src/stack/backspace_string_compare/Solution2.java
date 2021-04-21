@@ -1,8 +1,7 @@
-package stack.back_string_compare;
+package stack.backspace_string_compare;
 
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 
