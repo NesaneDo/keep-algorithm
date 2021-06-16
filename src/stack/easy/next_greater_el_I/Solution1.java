@@ -1,4 +1,4 @@
-package stack.next_greater_el_I;
+package stack.easy.next_greater_el_I;
 
 import org.junit.Test;
 

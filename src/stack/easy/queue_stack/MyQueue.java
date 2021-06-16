@@ -1,4 +1,4 @@
-package stack.queue_stack;
+package stack.easy.queue_stack;
 
 import org.junit.Test;
 

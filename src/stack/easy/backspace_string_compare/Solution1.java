@@ -1,4 +1,4 @@
-package stack.backspace_string_compare;
+package stack.easy.backspace_string_compare;
 
 import org.junit.Test;
 

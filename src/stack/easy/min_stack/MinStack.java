@@ -1,4 +1,4 @@
-package stack.min_stack;
+package stack.easy.min_stack;
 
 /**
  * 自己设计栈：最后要么超内存，要么超时间 [苦涩]

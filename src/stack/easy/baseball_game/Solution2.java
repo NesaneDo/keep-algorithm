@@ -1,4 +1,4 @@
-package stack.baseball_game;
+package stack.easy.baseball_game;
 
 import org.junit.Test;
 

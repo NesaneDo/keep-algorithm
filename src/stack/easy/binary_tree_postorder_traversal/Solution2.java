@@ -1,4 +1,4 @@
-package stack.binary_tree_postorder_traversal;
+package stack.easy.binary_tree_postorder_traversal;
 
 import com.sun.jmx.remote.internal.ArrayQueue;
 import util.TreeNode;
