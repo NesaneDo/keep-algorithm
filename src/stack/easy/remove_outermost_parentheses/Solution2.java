@@ -21,6 +21,7 @@ public class Solution2 {
         return res.toString();
     }
 
+
     @Test
     public void main() {
         System.out.println(removeOuterParentheses("(()())(())()()(())((()())())"));
