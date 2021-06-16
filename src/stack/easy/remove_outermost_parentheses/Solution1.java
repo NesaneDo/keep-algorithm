@@ -19,12 +19,15 @@ public class Solution1 {
         StringBuilder res = new StringBuilder();
         for (char c : s.toCharArray()) {
             if (c == '(') {
+                if (stack.size() > 0) {
+                    res.append(c);
+                }
                 stack.push(c);
             } else {
                 stack.pop();
-            }
-            if (stack.size() > 0) {
-                res.append(c);
+                if (stack.size() > 0) {
+                    res.append(c);
+                }
             }
         }
         return res.toString();
@@ -32,6 +35,6 @@ public class Solution1 {
 
     @Test
     public void main() {
-        System.out.println(removeOuterParentheses("(()())(())"));
+        System.out.println(removeOuterParentheses("(()())(())()()(())((()())())"));
     }
 }

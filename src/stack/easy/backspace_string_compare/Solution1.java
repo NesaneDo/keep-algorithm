@@ -1,6 +1,6 @@
 package stack.easy.backspace_string_compare;
 
-import org.junit.Test;
+
 
 /**
  * @author Rondo Chan
@@ -28,11 +28,5 @@ public class Solution1 {
                 target.append(c);
             }
         }
-    }
-
-    @Test
-    public void test() {
-        System.out.println(backspaceCompare("y#fo##f"
-                , "y#f#o##f"));
     }
 }

@@ -1,5 +1,7 @@
 package stack.easy.remove_outermost_parentheses;
 
+import org.junit.Test;
+
 /**
  * 使用计数法
  * @author Rondo Chan
@@ -17,5 +19,10 @@ public class Solution2 {
             }
         }
         return res.toString();
+    }
+
+    @Test
+    public void main() {
+        System.out.println(removeOuterParentheses("(()())(())()()(())((()())())"));
     }
 }

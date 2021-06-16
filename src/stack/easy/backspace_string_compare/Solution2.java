@@ -1,6 +1,5 @@
 package stack.easy.backspace_string_compare;
 
-import org.junit.Test;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -40,9 +39,9 @@ public class Solution2 {
             }
         }
     }
-    @Test
-    public void test() {
-        System.out.println(backspaceCompare("y#fo##f"
-                , "y#f#o##f"));
-    }
+//    @Test
+//    public void test() {
+//        System.out.println(backspaceCompare("y#fo##f"
+//                , "y#f#o##f"));
+//    }
 }
