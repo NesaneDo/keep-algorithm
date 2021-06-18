@@ -23,6 +23,7 @@ public class Solution1 {
                 stack.push(c);
             }
         }
+
         // 遍历完成后，栈中剩下的元素就是结果的逆序，需要逆序遍历
         Iterator<Character> iterator=stack.descendingIterator();
         while(iterator.hasNext()){
