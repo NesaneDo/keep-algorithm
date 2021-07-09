@@ -10,23 +10,23 @@
 
 ```java
 public List<Integer> getRow(int rowIndex) {
-    List<Integer> res = new ArrayList<>();
-    int[] ints = new int[rowIndex+1];
-    if (rowIndex == 0) {
-        ints[0] = 1;
-    } else if (rowIndex == 1) {
-        ints[0] = ints[1] = 1;
-    } else {
-        ints[0] = ints[rowIndex] = 1;
-        for (int i = 1; i <= rowIndex / 2; i++) {
-            ints[i] = ints[rowIndex - i] = ints[i - 1] * (rowIndex - i+1) / i;
+        List<Integer> res = new ArrayList<>();
+        int[] ints = new int[rowIndex + 1];
+        if (rowIndex == 0) {
+            ints[0] = 1;
+        } else if (rowIndex == 1) {
+            ints[0] = ints[1] = 1;
+        } else {
+            ints[0] = ints[rowIndex] = 1;
+            for (int i = 1; i <= rowIndex / 2; i++) {
+                ints[i] = ints[rowIndex - i] = (int) ((long) (ints[i - 1] * (rowIndex - i + 1) / i));
+            }
         }
+        for (int i : ints) {
+            res.add(i);
+        }
+        return res;
     }
-    for (int i : ints) {
-        res.add(i);
-    }
-    return res;
-}
 ```
 
 

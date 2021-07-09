@@ -23,7 +23,7 @@ import java.util.List;
 public class Solution1 {
     public List<Integer> getRow(int rowIndex) {
         List<Integer> res = new ArrayList<>();
-        int[] ints = new int[rowIndex+1];
+        int[] ints = new int[rowIndex + 1];
         if (rowIndex == 0) {
             ints[0] = 1;
         } else if (rowIndex == 1) {
@@ -31,7 +31,7 @@ public class Solution1 {
         } else {
             ints[0] = ints[rowIndex] = 1;
             for (int i = 1; i <= rowIndex / 2; i++) {
-                ints[i] = ints[rowIndex - i] = ints[i - 1] * (rowIndex - i+1) / i;
+                ints[i] = ints[rowIndex - i] = (int) ((long) (ints[i - 1] * (rowIndex - i + 1) / i));
             }
         }
         for (int i : ints) {
@@ -39,8 +39,9 @@ public class Solution1 {
         }
         return res;
     }
+
     @Test
-    public void test(){
+    public void test() {
         System.out.println(getRow(0));
         System.out.println(getRow(1));
         System.out.println(getRow(2));
