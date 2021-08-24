@@ -37,12 +37,33 @@ public class Solution1 {
                 carry=false;
             }
         }
+
         chars[0]=carry?'1':'0';
         int index=carry?0:1;
         return new String(chars,index,chars.length-index);
     }
+    public int mySqrt(int x) {
+        if(x==1||x==0){
+            return x;
+        }
+        long n=x/2;
+        while(n*n>x){
+            n/=2;
+        }
+        while(n*n<x){
+            n++;
+        }
+        while(n*n>x){
+            n--;
+        }
+        return (int)n;
+    }
     @Test
     public void test(){
-        System.out.println(addBinary("11111","1011"));
+        System.out.println(mySqrt(2));
+        System.out.println(mySqrt(23));
+        System.out.println(mySqrt(4));
+        System.out.println(mySqrt(8));
+        System.out.println(mySqrt(1623412134));
     }
 }
