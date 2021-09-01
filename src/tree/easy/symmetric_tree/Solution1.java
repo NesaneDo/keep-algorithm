@@ -1,4 +1,4 @@
-package tree.easy.same_tree.tree.easy.symmetric_tree;
+package tree.easy.symmetric_tree;
 
 import util.TreeNode;
 
