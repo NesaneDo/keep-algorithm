@@ -1,10 +1,6 @@
 package list.linkedlist.easy.remove_duplicated_from_sorted_list;
 
-import org.junit.Test;
 import util.ListNode;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Solution2 {
     /**
