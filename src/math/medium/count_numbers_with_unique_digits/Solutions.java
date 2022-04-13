@@ -1,4 +1,4 @@
-package maths.medium.count_numbers_with_unique_digits;
+package math.medium.count_numbers_with_unique_digits;
 
 /**
  * LeetCode 357. 统计各位数字都不同的数字个数
