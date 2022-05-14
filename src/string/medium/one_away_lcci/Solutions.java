@@ -11,6 +11,8 @@ package string.medium.one_away_lcci;
 public class Solutions {
     /**
      * 双指针，从两头记录相同的字符数，不相同时停止
+     * 时间复杂度：O(n)，n 为 first 和 second 长度更小的值
+     * 空间复杂度：O(1)
      */
     public boolean oneEditAway(String first, String second) {
         int fn = first.length() - 1, sn = second.length() - 1;
@@ -25,12 +27,5 @@ public class Solutions {
             same++;
         }
         return first.length() - same < 2 && second.length() - same < 2;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new Solutions().oneEditAway("ab", "bc"));
-        System.out.println(new Solutions().oneEditAway("abc", "bc"));
-        System.out.println(new Solutions().oneEditAway("teacher", "teachy"));
-        System.out.println(new Solutions().oneEditAway("teacher", "teamer"));
     }
 }
